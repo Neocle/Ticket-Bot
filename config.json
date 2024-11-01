@@ -1,0 +1,147 @@
+{
+    "clientId": "1234978265513463961",
+    "guildId": "1099051316749283340",
+    "staffRoleId": "1299670452695990332",
+    "adminRoleId": "1127334417602453544",
+    "maxTicketsPerUser": "3",
+    "logsChannelId": "1234982649899258007",
+    "reviewsChannelId": "1236782549347467294",
+    "closedCategoryId": "1299403926491107358",
+    "mainColor": 62676,
+
+    "numberOpenedTickets": {
+       "id": "1236783859371081801",
+       "title": "Open Tickets:"
+    },
+    "totalTicketsEverOpened": {
+        "id": "1236783945165705337",
+        "title": "Total Tickets:"
+    },
+    "averageCompleteTime": {
+        "id": "1272924393781203035",
+        "title": "Avg Time:"
+    },
+    "reviewsAverage": {
+        "id": "1236783930221396048",
+        "title": "Rated ⭐"
+    },
+
+    "ticketCategories": [
+        {
+            "label": "Reports",
+            "description": "IDK.",
+            "value": "reports",
+            "id": "1236759505258418368",
+            "emoji": "<:ASQ_reports:1236769175935127673>",
+            "channelNameEmoji": "📝",
+            "ticketsPrefix": "report",
+            "questions": [
+                {
+                    "label": "What's your in-game name?",
+                    "placeholder": "eg. Neocle",
+                    "customId": "reporter_name",
+                    "type": "short"
+                },
+                {
+                    "label": "Who are you reporting?",
+                    "placeholder": "eg. Alfazzy",
+                    "customId": "reported_name",
+                    "type": "short"
+                },
+                {
+                    "label": "What is your issue exactly?",
+                    "placeholder": "Describe precisely everything.",
+                    "customId": "reported_issue",
+                    "type": "paragraph"
+                }
+            ]
+        },
+        {
+            "label": "Billing",
+            "description": "Issues concerning billing and payments.",
+            "value": "billing",
+            "id": "1236763732969918554",
+            "emoji": "<:ASQ_billing:1236768485330255882>",
+            "channelNameEmoji": "💸",
+            "ticketsPrefix": "billing",
+            "questions": [
+                {
+                    "label": "What's your in-game name?",
+                    "placeholder": "eg. Neocle",
+                    "customId": "reporter_name",
+                    "type": "short"
+                },
+                {
+                    "label": "What's your issue?",
+                    "placeholder": "Describe precisely everything.",
+                    "customId": "reported_issue",
+                    "type": "paragraph"
+                }
+            ]
+        },
+        {
+            "label": "Admin",
+            "description": "IDK.",
+            "value": "admin",
+            "id": "1236767845082333204",
+            "emoji": "<:ASQ_admin:1236769533818179727>",
+            "channelNameEmoji": "⚙️",
+            "ticketsPrefix": "admin",
+            "questions": [
+                {
+                    "label": "What's your in-game name?",
+                    "placeholder": "eg. Neocle",
+                    "customId": "reporter_name",
+                    "type": "short"
+                },
+                {
+                    "label": "What's your issue?",
+                    "placeholder": "Describe precisely everything.",
+                    "customId": "reported_issue",
+                    "type": "paragraph"
+                }
+            ]
+        }
+    ],
+
+    "panelembed": {
+        "title": "Open a ticket", 
+        "description": "👋 **Hiya,** use the below dropdown menu in order to select the ticket category you require.\n\n> ❔ **Looking to appeal a ban or report a bug?** Use the below links and fill out those forms:\n> - [Appeal a Ban](https://aloramc.com)\n> - [Report a Bug](https://aloramc.com)\n\nAlso, please be patient with our Staff and read the [guidelines](https://aloramc.com).",
+        "color": 62676,
+        "image": {
+            "url": "https://media.discordapp.net/attachments/1299042593036046358/1299300685762002944/Picture2-1.png?ex=671cb38f&is=671b620f&hm=7f85fb9eed1e7fd11567113499f320b1796502de283f6438cc426e49aa10a775&=&format=webp&quality=lossless"
+        },
+        "thumbnail": {
+            "url": "https://i.imgur.com/bsgPKqk.png"
+        }
+    },
+
+    "ticketEmbed": {
+        "description": "Thank you for your report, A staff member will replay to you as soon as possible! \nWhile you wait, please explain your report in detail, if you have images, please send them!",
+        "color": 62676
+    },
+
+    "ticketCloseEmbed": {
+        "title": "🔒 Ticket Closed",
+        "description": "This ticket has been closed, and you are now unable to talk",
+        "color": 16729670
+    },
+
+    "ticketReopenEmbed": {
+        "title": "🔓 Ticket Reopened",
+        "description": "You can now communicate again with the support team.",
+        "color": 5242702
+    },
+
+    "reviewsDmEmbed": {
+        "title": "Ticket Closed",
+        "description": "> Your ticket is marked as complete in **AloraMC**!\n> Thanks for contacting support, we would like to know how satisfied you are by rating it with 1-5 stars below.",
+        "color": 62676
+    },
+
+    "reviewsChannelEmbed": {
+        "title": "New Review Received",
+        "color": 62676
+    }
+
+}
