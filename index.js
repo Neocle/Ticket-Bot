@@ -3,7 +3,6 @@ const fs = require('fs');
 const { exec } = require('child_process');
 const startStatisticsUpdater = require('./utils/statistics');
 const startActivityUpdater = require('./utils/activity');
-require('./utils/webserver');
 require('dotenv').config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ] });
@@ -78,4 +77,6 @@ client.once('ready', () => {
     startActivityUpdater(client);
 });
 
+require('./utils/webserver');
+require('./utils/config-validator');
 client.login(process.env.TOKEN);

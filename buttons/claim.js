@@ -44,7 +44,7 @@ module.exports = {
         const currentEmbed = interaction.message.embeds[0];
         let updatedDescription = currentEmbed.description || '';
 
-        const claimText = `\n\n**Ticket claimed by:** ${staffMember.tag}`;
+        const claimText = `\n\n**Ticket claimed by:** <@${staffMember.id}> at <t:${Math.floor(Date.now() / 1000)}:F>`;
         if (!updatedDescription.includes("Ticket claimed by")) {
             updatedDescription += claimText;
         }
@@ -89,10 +89,10 @@ module.exports = {
             .setColor(config.mainColor)
             .setTitle('Ticket Claimed')
             .addFields(
-                { name: 'Claimed by', value: `${staffMember.tag}`, inline: false },
+                { name: 'Claimed by', value: `<@${staffMember.id}>`, inline: false },
                 { name: 'Channel', value: `<#${ticketChannel.id}>`, inline: false },
-                { name: 'At', value: new Date().toLocaleString(), inline: false }
-            )
+                { name: 'At', value: `<t:${Math.floor(Date.now() / 1000)}:F>`, inline: false }
+            );
 
         await logsChannel.send({ embeds: [logEmbed] });
     }

@@ -89,10 +89,10 @@ module.exports = {
             .setColor(config.mainColor)
             .setTitle('Ticket Unclaimed')
             .addFields(
-                { name: 'Unclaimed by', value: `${staffMember.tag}`, inline: false },
+                { name: 'Unclaimed by', value: `<@${staffMember.id}>`, inline: false },
                 { name: 'Channel', value: `<#${ticketChannel.id}>`, inline: false },
-                { name: 'At', value: new Date().toLocaleString(), inline: false }
-            )
+                { name: 'At', value: `<t:${Math.floor(Date.now() / 1000)}:F>`, inline: false }
+            );
 
         await logsChannel.send({ embeds: [logEmbed] });
     }

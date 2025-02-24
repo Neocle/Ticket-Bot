@@ -21,6 +21,10 @@ module.exports = {
                 throw new Error('Ticket creator not found in the database.');
             }
 
+            if (!interaction.guild.members.cache.has(ticketCreatorId)) {
+                throw new Error('Ticket creator is not a valid user.');
+            }
+
             await ticketChannel.setParent(config.closedCategoryId, { lockPermissions: false });
             await ticketChannel.permissionOverwrites.edit(ticketCreatorId, { SendMessages: false });
             db.prepare('UPDATE tickets SET status = ? WHERE channelId = ?').run('closed', ticketChannel.id);
@@ -35,8 +39,6 @@ module.exports = {
                     .setLabel('🔓 Reopen')
                     .setStyle(ButtonStyle.Success)
             );
-
-            await interaction.update({ content: "You successfully closed the ticket.", ephemeral: true, components: [] });
 
             const embed = new EmbedBuilder()
                 .setColor(config.ticketCloseEmbed?.color || 0x0099ff)
@@ -73,6 +75,7 @@ module.exports = {
                 });
             }
 
+            await interaction.update({ content: "You successfully closed the ticket.", ephemeral: true, components: [] });
             await ticketChannel.send({ content: `<@${ticketCreatorId}>`, embeds: [embed], components: [updatedRow] });
 
             const logsChannelId = config.logsChannelId;
@@ -89,7 +92,7 @@ module.exports = {
                     { name: 'Closed by', value: `${staffMember.tag}`, inline: false },
                     { name: 'Channel', value: `<#${ticketChannel.id}>`, inline: false },
                     { name: 'At', value: new Date().toLocaleString(), inline: false }
-                )
+                );
     
             await logsChannel.send({ embeds: [logEmbed] });
 

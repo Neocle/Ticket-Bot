@@ -5,14 +5,14 @@ const db = require('../database/database');
 async function createTicket(interaction, category, answers) {
     try {
         const ticketCreatorId = interaction.user.id;
-        const channelName = `${category.channelNameEmoji}│${category.ticketsPrefix}-${interaction.user.username}`;
+        const channelName = `${category.channelNameEmoji}│${category.ticketsPrefix}-${interaction.user.globalName}`;
         const createdAt = new Date().toISOString();
     
         const ticketChannel = await interaction.guild.channels.create({
             name: channelName,
             type: ChannelType.GuildText,
             parent: category.id,
-            topic: `Ticket created by ${interaction.user.tag} for ${category.label}`,
+            topic: `Ticket created by ${interaction.user.globalName} for ${category.label}`,
             permissionOverwrites: [
                 {
                     id: interaction.guild.roles.everyone.id,
@@ -38,7 +38,7 @@ async function createTicket(interaction, category, answers) {
     
         const mainEmbed = new EmbedBuilder()
             .setColor(config.ticketEmbed?.color || 0x0099ff)
-            .setTitle(`${category.label} - ${interaction.user.username}`)
+            .setTitle(`${category.label} - ${interaction.user.globalName}`)
             .setDescription(config.ticketEmbed?.description || `Ticket created by ${interaction.user.tag}`)
             .setTimestamp(config.ticketEmbed.timestamp ? new Date(config.ticketEmbed.timestamp) : null);
 

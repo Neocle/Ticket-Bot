@@ -10,8 +10,8 @@ const updateBotActivity = async (client) => {
         const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + (guild.memberCount || 0), 0);
         const completedTickets = db.prepare('SELECT completedAt, createdAt FROM tickets WHERE status = ?').all('archived');
         const averageCompleteTime = completedTickets.length > 0 
-            ? (completedTickets.reduce((total, ticket) => total + (new Date(ticket.completedAt) - new Date(ticket.createdAt)), 0) / completedTickets.length) / 60000 
-            : 0;
+            ? ((completedTickets.reduce((total, ticket) => total + (new Date(ticket.completedAt) - new Date(ticket.createdAt)), 0) / completedTickets.length) / (60 * 60 * 1000)).toFixed(2) 
+            : "0.00";
 
         const reviews = db.prepare('SELECT rating FROM reviews').all();
         const reviewsAverage = reviews.length > 0 
@@ -23,8 +23,8 @@ const updateBotActivity = async (client) => {
             `${totalCompletedTickets} completed tickets`,
             `${totalMembers} members`,
             `${totalTicketsEverOpened} tickets ever opened`,
-            `${averageCompleteTime} average complete time`,
-            `${reviewsAverage} average rating`
+            `${averageCompleteTime}hours average completion time`,
+            `${reviewsAverage}⭐ average rating`
         ];
 
         let currentStatusIndex = 0;
