@@ -1,50 +1,58 @@
 {
-    "clientId": "1234978265513463961",
-    "guildId": "1099051316749283340",
-    "staffRoleId": "1299670452695990332",
-    "adminRoleId": "1127334417602453544",
+    "clientId": "",
+    "guildId": "",
+    "staffRoleId": "",
+    "adminRoleId": "",
     "maxTicketsPerUser": "3",
-    "logsChannelId": "1234982649899258007",
-    "reviewsChannelId": "1236782549347467294",
-    "closedCategoryId": "1299403926491107358",
-    "mainColor": 62676,
+    "logsChannelId": "",
+    "reviewsChannelId": "",
+    "closedCategoryId": "",
+    "mainColor": 16750848,
+    "staffCanArchive": true,
+    "app": {
+        "name": "Transcript Viewer",
+        "url": "http://localhost",
+        "icon": "",
+        "copyright": "Neocle & Zyztem. All rights reserved.",
+        "port": 3000
+    },
 
     "numberOpenedTickets": {
-       "id": "1236783859371081801",
+       "id": "1336812909988286536",
        "title": "Open Tickets:"
     },
     "totalTicketsEverOpened": {
-        "id": "1236783945165705337",
+        "id": "1336813325496881182",
         "title": "Total Tickets:"
     },
     "averageCompleteTime": {
-        "id": "1272924393781203035",
+        "id": "1336813396087017563",
         "title": "Avg Time:"
     },
     "reviewsAverage": {
-        "id": "1236783930221396048",
+        "id": "1336813469005254727",
         "title": "Rated ⭐"
     },
 
     "ticketCategories": [
         {
             "label": "Reports",
-            "description": "IDK.",
+            "description": "Report A User",
             "value": "reports",
-            "id": "1236759505258418368",
-            "emoji": "<:ASQ_reports:1236769175935127673>",
+            "id": "1325953381583421480",
+            "emoji": "📝",
             "channelNameEmoji": "📝",
             "ticketsPrefix": "report",
             "questions": [
                 {
                     "label": "What's your in-game name?",
-                    "placeholder": "eg. Neocle",
+                    "placeholder": "eg. Zyztem",
                     "customId": "reporter_name",
                     "type": "short"
                 },
                 {
                     "label": "Who are you reporting?",
-                    "placeholder": "eg. Alfazzy",
+                    "placeholder": "eg. Ducky",
                     "customId": "reported_name",
                     "type": "short"
                 },
@@ -57,34 +65,11 @@
             ]
         },
         {
-            "label": "Billing",
-            "description": "Issues concerning billing and payments.",
-            "value": "billing",
-            "id": "1236763732969918554",
-            "emoji": "<:ASQ_billing:1236768485330255882>",
-            "channelNameEmoji": "💸",
-            "ticketsPrefix": "billing",
-            "questions": [
-                {
-                    "label": "What's your in-game name?",
-                    "placeholder": "eg. Neocle",
-                    "customId": "reporter_name",
-                    "type": "short"
-                },
-                {
-                    "label": "What's your issue?",
-                    "placeholder": "Describe precisely everything.",
-                    "customId": "reported_issue",
-                    "type": "paragraph"
-                }
-            ]
-        },
-        {
             "label": "Admin",
-            "description": "IDK.",
+            "description": "Talk to the server's administrators.",
             "value": "admin",
-            "id": "1236767845082333204",
-            "emoji": "<:ASQ_admin:1236769533818179727>",
+            "id": "1325953381583421480",
+            "emoji": "⚙️",
             "channelNameEmoji": "⚙️",
             "ticketsPrefix": "admin",
             "questions": [
@@ -101,24 +86,47 @@
                     "type": "paragraph"
                 }
             ]
+        },
+        {
+            "label": "Bugs",
+            "description": "Report A Bug",
+            "value": "bugs",
+            "id": "1325953381583421480",
+            "emoji": "🐞",
+            "channelNameEmoji": "🐞",
+            "ticketsPrefix": "bug",
+            "questions": [
+                {
+                    "label": "What's your in-game name?",
+                    "placeholder": "eg. Zyztem",
+                    "customId": "reporter_name",
+                    "type": "short"
+                },
+                {
+                    "label": "What is the bug?",
+                    "placeholder": "Describe precisely everything.",
+                    "customId": "reported_issue",
+                    "type": "paragraph"
+                }
+            ]
         }
     ],
 
     "panelembed": {
         "title": "Open a ticket", 
-        "description": "👋 **Hiya,** use the below dropdown menu in order to select the ticket category you require.\n\n> ❔ **Looking to appeal a ban or report a bug?** Use the below links and fill out those forms:\n> - [Appeal a Ban](https://aloramc.com)\n> - [Report a Bug](https://aloramc.com)\n\nAlso, please be patient with our Staff and read the [guidelines](https://aloramc.com).",
-        "color": 62676,
+        "description": "👋 **Hiya,** use the below dropdown menu in order to select the ticket category you require.\n\nAlso, please be patient with our Staff and read the <#1318248467318964246>.",
+        "color": 16750848,
         "image": {
-            "url": "https://media.discordapp.net/attachments/1299042593036046358/1299300685762002944/Picture2-1.png?ex=671cb38f&is=671b620f&hm=7f85fb9eed1e7fd11567113499f320b1796502de283f6438cc426e49aa10a775&=&format=webp&quality=lossless"
+            "url": ""
         },
         "thumbnail": {
-            "url": "https://i.imgur.com/bsgPKqk.png"
+            "url": "https://cdn.cogworksmc.com/assets/CogworksLogo.gif"
         }
     },
 
     "ticketEmbed": {
         "description": "Thank you for your report, A staff member will replay to you as soon as possible! \nWhile you wait, please explain your report in detail, if you have images, please send them!",
-        "color": 62676
+        "color": 16750848
     },
 
     "ticketCloseEmbed": {
@@ -135,13 +143,12 @@
 
     "reviewsDmEmbed": {
         "title": "Ticket Closed",
-        "description": "> Your ticket is marked as complete in **AloraMC**!\n> Thanks for contacting support, we would like to know how satisfied you are by rating it with 1-5 stars below.",
-        "color": 62676
+        "description": "> Your ticket is marked as complete in **CogworksMC**!\n> Thanks for contacting support, we would like to know how satisfied you are by rating it with 1-5 stars below.",
+        "color": 16750848
     },
 
     "reviewsChannelEmbed": {
         "title": "New Review Received",
-        "color": 62676
+        "color": 16750848
     }
-
 }

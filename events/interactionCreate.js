@@ -33,7 +33,7 @@ module.exports = {
                     }
 
                     const ticketCreatorId = interaction.user.id;
-                    const openTicketsQuery = db.prepare(`SELECT COUNT(*) AS count FROM tickets WHERE userId = ?`);
+                    const openTicketsQuery = db.prepare(`SELECT COUNT(*) AS count FROM tickets WHERE userId = ? AND status = 'open'`);
                     const { count } = openTicketsQuery.get(ticketCreatorId);
 
                     if (count >= config.maxTicketsPerUser) { 
@@ -124,7 +124,7 @@ module.exports = {
                     }
             
                     const ticketCreatorId = interaction.user.id;
-                    const openTicketsQuery = db.prepare(`SELECT COUNT(*) AS count FROM tickets WHERE userId = ?`);
+                    const openTicketsQuery = db.prepare(`SELECT COUNT(*) AS count FROM tickets WHERE userId = ? and status = 'open'`);
                     const { count } = openTicketsQuery.get(ticketCreatorId);
             
                     if (count >= config.maxTicketsPerUser) {

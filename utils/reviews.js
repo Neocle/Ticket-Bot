@@ -58,6 +58,11 @@ async function sendFeedbackDM(client, userId, ticketId) {
 
     } catch (error) {
         console.error('Error sending feedback DM:', error);
+        // Handle the case where the bot cannot send a DM to the user
+        const ticketChannel = await client.channels.fetch(ticketId);
+        if (ticketChannel) {
+            await ticketChannel.send({ content: `<@${userId}>, we were unable to send you a feedback request via DM. Please ensure your DMs are open.` });
+        }
     }
 }
 

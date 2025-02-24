@@ -1,0 +1,4 @@
+tickets.db
+sessions.db
+.npm
+node_modules
